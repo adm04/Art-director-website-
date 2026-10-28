@@ -7,7 +7,7 @@ Measured at 1440×900 (desktop), 768 and 390 (mobile, shared < 810px layout). Pa
 | # | Section | Desktop box | Positioning | Interaction model |
 |---|---------|-------------|-------------|-------------------|
 | 0 | Menu | 525×88, top 20, centered | `position: fixed`, z 8 | static + link hovers |
-| 1 | Hero | 1440×900 | `position: sticky; top: 0` — stays pinned behind everything that follows | scroll-driven (card fade) |
+| 1 | Hero | 1440×100vh | `position: sticky; top: 0` — stays pinned behind everything that follows | scroll-driven (card fade) |
 | 2 | Work | 0→6603 tall, bg `#F5F3F1` | flow; covers hero | scroll-driven (card reveals, sidebar active state) + cursor follower on cards |
 | 2a | Up Numbers ruler | 1440×70 | sticky top 0 inside Work, `mix-blend-mode: difference` | static |
 | 2b | Sidebar | 274 wide, 900 tall | sticky top 0 inside Projects row | scroll-driven active item |

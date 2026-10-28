@@ -205,7 +205,7 @@ html.lenis body {
 .hero {
   position: sticky;
   top: 0;
-  height: 900px;
+  height: 100vh; /* reference hero is always one viewport tall */
   overflow: hidden;
   isolation: isolate;
 }
@@ -314,8 +314,8 @@ html.lenis body {
   text-align: center;
   font-family: var(--font-display), sans-serif;
   font-weight: 600;
-  font-size: 28px;
-  line-height: 32.5px;
+  font-size: 1.944vw; /* 28px @ 1440, scales with width like the reference */
+  line-height: 2.257vw;
   letter-spacing: -0.045em;
 }
 .hero-tagline .serif {
@@ -363,8 +363,7 @@ html.lenis body {
   position: sticky;
   top: 0;
   width: var(--side);
-  height: 900px;
-  max-height: 100vh;
+  height: 100vh;
   flex-shrink: 0;
   display: flex;
   align-items: center;
