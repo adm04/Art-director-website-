@@ -1,5 +1,6 @@
 "use client";
 
+import { asset } from "@/lib/asset";
 import { site } from "@/content/site";
 import { Reveal } from "@/components/Reveal";
 import { RichLine } from "@/components/RichLine";
@@ -27,7 +28,7 @@ export function Manifesto() {
             // eslint-disable-next-line @next/next/no-img-element
             <img
               key={s.src}
-              src={s.src}
+              src={asset(s.src)}
               alt=""
               className="sticker"
               style={{ left: `calc(${s.left}vw - var(--m-pad))`, top: `${s.top}vw`, width: `${s.width}vw` }}

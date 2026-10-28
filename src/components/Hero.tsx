@@ -1,5 +1,6 @@
 "use client";
 
+import { asset } from "@/lib/asset";
 import { useEffect, useRef } from "react";
 import { site } from "@/content/site";
 import { Ruler } from "@/components/Ruler";
@@ -40,7 +41,7 @@ export function Hero() {
 
   return (
     <section className="hero" aria-label="Intro">
-      <video className="hero-video" src="/media/hero.mp4" poster="/media/hero-poster.jpg" autoPlay loop muted playsInline />
+      <video className="hero-video" src={asset("/media/hero.mp4")} poster={asset("/media/hero-poster.jpg")} autoPlay loop muted playsInline />
       <div className="hero-overlay" />
       <div className="hero-card-wrap">
         <div className="hero-card-size">

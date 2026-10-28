@@ -1,5 +1,6 @@
 "use client";
 
+import { asset } from "@/lib/asset";
 import { Fragment, useEffect, useRef, useState } from "react";
 import { site } from "@/content/site";
 import { Ruler } from "@/components/Ruler";
@@ -35,7 +36,7 @@ export function Work() {
   return (
     <section className="work" id="work-section">
       <div className="work-ruler-wrap">
-        <div className="fade" />
+        <div className="fade" style={{ backgroundImage: `url(${asset("/media/ruler-fade.png")})` }} />
         <Ruler labelFirst />
       </div>
       <div className="work-gap" />
@@ -58,7 +59,7 @@ export function Work() {
           <h2 className="work-heading">
             <span>Things I’ve</span>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/stickers/balloon-dog.png" alt="" />
+            <img src={asset("/stickers/balloon-dog.png")} alt="" />
             <span className="serif">made.</span>
           </h2>
           <div className="first-gap" />

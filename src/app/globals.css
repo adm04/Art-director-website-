@@ -347,7 +347,7 @@ html.lenis body {
   top: 0;
   width: 100%;
   height: 113px;
-  background: url(/media/ruler-fade.png) top / 100% 100% no-repeat;
+  background: top / 100% 100% no-repeat; /* image set inline (base-path aware) */
 }
 .work-ruler-wrap .ruler {
   position: relative;

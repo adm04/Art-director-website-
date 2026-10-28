@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { asset } from "@/lib/asset";
 import { useEffect, useRef } from "react";
 import { site } from "@/content/site";
 import { DragHand } from "@/components/icons";
@@ -109,7 +111,7 @@ export function MoreToDiscover() {
           <div ref={track} className="discover-track">
             {Array.from({ length: COPIES }, (_, c) =>
               site.projects.map((p) => (
-                <a
+                <Link
                   key={`${c}-${p.id}`}
                   href={`/${p.id}`}
                   className="discover-card"
@@ -119,15 +121,15 @@ export function MoreToDiscover() {
                   tabIndex={c > 0 ? -1 : undefined}
                 >
                   {p.video ? (
-                    <video src={p.video} autoPlay loop muted playsInline />
+                    <video src={asset(p.video)} autoPlay loop muted playsInline />
                   ) : p.image ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={p.image} alt="" draggable={false} />
+                    <img src={asset(p.image)} alt="" draggable={false} />
                   ) : (
                     <div className="placeholder-media" />
                   )}
                   <span className="project-label">{p.name}</span>
-                </a>
+                </Link>
               )),
             )}
           </div>

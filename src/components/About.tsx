@@ -1,5 +1,6 @@
 "use client";
 
+import { asset } from "@/lib/asset";
 import { site } from "@/content/site";
 import { Reveal } from "@/components/Reveal";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -27,7 +28,7 @@ export function About() {
         {gallery.map((src, i) => (
           <div key={i} className="strip-item">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            {src && <img src={src} alt="" />}
+            {src && <img src={asset(src)} alt="" />}
           </div>
         ))}
       </Reveal>

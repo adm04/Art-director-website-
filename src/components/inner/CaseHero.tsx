@@ -1,3 +1,4 @@
+import { asset } from "@/lib/asset";
 import type { CaseStudy } from "@/content/site";
 
 // Cut-out boxes from the reference hero (1440-wide frame, centred and cropped on small screens).
@@ -17,7 +18,7 @@ export function CaseHero({ name, page }: { name: string; page: CaseStudy }) {
           const src = page.cutouts?.[i];
           return src ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img key={i} src={src} alt="" className="cutout" style={box} />
+            <img key={i} src={asset(src)} alt="" className="cutout" style={box} />
           ) : (
             <div key={i} className="cutout cutout-placeholder" style={box} />
           );
@@ -27,7 +28,7 @@ export function CaseHero({ name, page }: { name: string; page: CaseStudy }) {
         <div className="case-mark">
           {page.mark ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={page.mark} alt={name} />
+            <img src={asset(page.mark)} alt={name} />
           ) : (
             <span>{name}</span>
           )}

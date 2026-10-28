@@ -1,7 +1,9 @@
 "use client";
 
 import { forwardRef, useRef, type CSSProperties } from "react";
+import Link from "next/link";
 import { useReveal, type RevealConfig } from "@/lib/scroll";
+import { asset } from "@/lib/asset";
 
 type Props = {
   name: string;
@@ -32,7 +34,7 @@ export const ProjectCard = forwardRef<HTMLDivElement, Props>(function ProjectCar
       }}
       style={style}
     >
-      <a
+      <Link
         ref={inner}
         href={href}
         className={`project-card reveal-inner ${className}`}
@@ -40,10 +42,10 @@ export const ProjectCard = forwardRef<HTMLDivElement, Props>(function ProjectCar
         style={{ opacity: cfg.opacity[0], transform: `translateY(${cfg.y[0]}px)` }}
       >
         {video ? (
-          <video src={video} autoPlay loop muted playsInline />
+          <video src={asset(video)} autoPlay loop muted playsInline />
         ) : image ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={image} alt={name} />
+          <img src={asset(image)} alt={name} />
         ) : (
           <div className="placeholder-media">
             <span className="num">{String(index + 1).padStart(2, "0")}</span>
@@ -51,7 +53,7 @@ export const ProjectCard = forwardRef<HTMLDivElement, Props>(function ProjectCar
           </div>
         )}
         <span className="project-label">{name}</span>
-      </a>
+      </Link>
     </div>
   );
 });
